@@ -1,3 +1,6 @@
 #!/bin/bash
-sudo apt update
-sudo apt install nginx
+yum update -y
+yum install -y httpd
+systemctl start httpd
+systemctl enable httpd
+echo "Hello World from asg" > /var/www/html/index.html
