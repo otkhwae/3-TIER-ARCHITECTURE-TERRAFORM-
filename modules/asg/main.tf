@@ -10,10 +10,11 @@ resource "aws_launch_template" "launch_template" {
 
 resource "aws_autoscaling_group" "asg" {
 
-  min_size             = var.asg_min_size
-  max_size             = var.asg_max_size
-  desired_capacity     = var.asg_desired_size
-  vpc_zone_identifier = [var.private_app_subnet_1a_id, var.private_app_subnet_1b_id]
+  min_size             =  var.asg_min_size
+  max_size             =  var.asg_max_size
+  desired_capacity     =  var.asg_desired_size
+  vpc_zone_identifier  =  [var.private_app_subnet_1a_id, var.private_app_subnet_1b_id]
+  target_group_arns    =  var.alb_target_grp_arn
 
   launch_template {
     id = aws_launch_template.launch_template.id
