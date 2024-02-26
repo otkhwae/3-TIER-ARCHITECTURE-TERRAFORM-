@@ -15,7 +15,7 @@ module "vpc" {
 }
 
 
-#========================= creaate nat gw ==========================
+#========================= create nat gw ==========================
 module "nat_gateway" {
   # module source
   source = "../modules/nat_gw"
@@ -70,8 +70,11 @@ module "asg" {
   project_name                  =   module.vpc.project_name
   private_app_subnet_1a_id      =   module.vpc.private_app_subnet_1a_id  
   private_app_subnet_1b_id      =   module.vpc.private_app_subnet_1b_id
+  # from alb module
   alb_target_grp_arn            =   module.alb.alb_target_grp_arn
+  # from security grp module
   asg_sg_id                     =   module.security_grp.asg_sg_id
+  
   asg_max_size                  =   var.asg_max_size
   asg_min_size                  =   var.asg_min_size
   asg_desired_size              =   var.asg_desired_size
