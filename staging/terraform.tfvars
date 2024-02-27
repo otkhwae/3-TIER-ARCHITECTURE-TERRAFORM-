@@ -16,4 +16,4 @@ launch_template_ami      =   "ami-0c7217cdde317cfec"
 asg_instance_type        =   "t2.micro"
 asg_max_size             =   2
 asg_min_size             =   0
-asg_desired_size         =   1
+asg_desired_size         =   2
