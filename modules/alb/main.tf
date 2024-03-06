@@ -15,7 +15,7 @@ resource "aws_alb" "app_load_balancer" {
 # create target group
 resource "aws_alb_target_group" "alb_target_grp" {
   name = "${var.project_name}-tg"
-  target_type = "ip"
+  
   port =  80
   protocol = "HTTP" 
   vpc_id =  var.vpc_id

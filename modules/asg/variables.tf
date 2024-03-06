@@ -2,8 +2,8 @@
 variable "vpc_id" {}
 variable "project_name" {}
 
-variable "private_app_subnet_1a_id" {}
-variable "private_app_subnet_1b_id" {}
+variable "public_subnet_1a_id" {}
+variable "public_subnet_1b_id" {}
 
 #from alb output
 variable "alb_target_grp_arn" {}

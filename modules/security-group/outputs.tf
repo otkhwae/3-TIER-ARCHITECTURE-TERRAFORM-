@@ -6,6 +6,7 @@ output "asg_sg_id" {
   value = aws_security_group.asg_security_grp.id
 }
 
-output "ec2_sg_id" {
-  value = aws_security_group.ec2_security_grp.id
+output "db_sg_id" {
+  value = aws_security_group.db_security_grp.id
 }
+
