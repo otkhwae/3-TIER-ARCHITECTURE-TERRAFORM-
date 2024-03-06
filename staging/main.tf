@@ -68,10 +68,12 @@ module "asg" {
   # from vpc module
   vpc_id                        =   module.vpc.vpc_id
   project_name                  =   module.vpc.project_name
-  private_app_subnet_1a_id      =   module.vpc.private_app_subnet_1a_id  
-  private_app_subnet_1b_id      =   module.vpc.private_app_subnet_1b_id
+  public_subnet_1a_id           =  module.vpc.public_subnet_1a_id
+  public_subnet_1b_id           =  module.vpc.public_subnet_1b_id
+
   # from alb module
   alb_target_grp_arn            =   module.alb.alb_target_grp_arn
+  
   # from security grp module
   asg_sg_id                     =   module.security_grp.asg_sg_id
   
