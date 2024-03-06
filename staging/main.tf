@@ -84,3 +84,22 @@ module "asg" {
   launch_template_ami           =   var.launch_template_ami
 }
 
+module "rds" {
+  # module source
+  source = "../modules/rds"
+
+  # from vpc module
+  private_db_subnet_1a_id    =  module.vpc.private_db_subnet_1a_id
+  private_db_subnet_1b_id    =  module.vpc.private_db_subnet_1b_id 
+
+  db_sg_id = module.security_grp.db_sg_id
+
+  db_engine = var.db_engine
+  db_engine_version = var.db_engine_version
+  db_identifier = var.db_identifier
+  db_username = var.db_username
+  db_password = var.db_password
+  db_instance_class = var.db_instance_class
+  db_allocated_storage = var.db_allocated_storage
+  db_multi_az = var.db_multi_az
+}
