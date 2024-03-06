@@ -22,9 +22,9 @@ asg_desired_size         =   2
 # db
 db_engine = "mysql"
 db_engine_version = "8.0.31" 
-db_identifier = "rds_instance"
+db_identifier = "staging-rds-instance"
 db_username = "ot"
-db_password = "1234@Abcd"
+db_password = "dbpassword"
 db_instance_class = "db.t2.micro"
 db_allocated_storage = 10
 db_multi_az = false
